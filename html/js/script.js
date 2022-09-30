@@ -19,10 +19,10 @@ let H = canvas.height;
 let degrees = 0;
 let new_degrees = 0;
 let time = 0;
-let color = "#12f2eb";
+let color = "#5177aa";
 // // let color = "#eb5757";
-let bgcolor = "rgba(0, 0, 0, 0.35)";
-let bgcolor2 = "#f63737";
+let bgcolor = "rgba(255, 255, 255, 0.50)";
+let bgcolor2 = "#eb5757";
 let animation_loop;
 let animation_loop_full;
 let cancel_timeout;
@@ -41,7 +41,7 @@ function init() {
     // Background 360 degree arc
     ctx.beginPath();
     ctx.strokeStyle = bgcolor;
-    ctx.lineWidth = 28.5;
+    ctx.lineWidth = 26.5;
     ctx.arc(W / 2, H / 2, 100, 0, Math.PI * 2, false);
     ctx.stroke();
 
@@ -50,26 +50,27 @@ function init() {
     ctx.beginPath();
     ctx.strokeStyle = color;
     ctx.lineCap = 'round';
-    ctx.lineWidth = 25;
+    ctx.lineWidth = 27.5;
     ctx.arc(W / 2, H / 2, 100, 0 - 90 * Math.PI / 180, radians - 90 * Math.PI / 180, false);
     ctx.stroke();
 }
 
 let addition = 0
 function draw(data) {
-    color = "#12f2eb";   
+    color = "#5177aa";
+    colorr = "#ffffff";
     ctx.clearRect(0,0,W,H);
     addition = 0;
     degrees = 0;
-    $(".label").css("color", color);
+    $(".label").css("color", colorr);
     if (typeof cancel_timeout !== undefined) clearTimeout(cancel_timeout);
     $(".icon").html(`<i class=\"fa-solid fa-bars-progress\" style=\"color:${color}\"></i>`);
     if (typeof animation_loop !== undefined) clearInterval(animation_loop);
     let duration = data.duration;
     $(".label").text(data.label);
     $(".container").css("opacity", "0");
-    if (data.icon !== null && data.icon !== undefined) { // Trying to use inv image that isn't there, no icon will show
-        $(".icon").html(`<i style=\"color:${color}\" class=\"${data.icon}\"> <img src=${data.icon} onerror="this.onerror=null; this.remove();"> </i>`);
+    if (data.icon !== null && data.icon !== undefined) {
+        $(".icon").html(`<i style=\"color:${color}\" class=\"${data.icon}\"></i>`);
     }
     $( ".container" ).animate({
         opacity: 1,
@@ -100,9 +101,9 @@ function animate_to() {
 function cancel() {
     color = bgcolor2;
     clearInterval(animation_loop);
-    // addition = (new_degrees - degrees) / 50;
+    addition = (new_degrees - degrees) / 50;
     animation_loop_full = setInterval(animate_to_full, 1);
-    $(".label").text("CANCELLED!");
+    $(".label").text("");
     $(".label").css("color", bgcolor2);
     $(".icon").html("<i class=\"fa-solid fa-xmark\" style='color: " + color + "'></i>");
     cancel_timeout = setTimeout(function () {
@@ -119,5 +120,5 @@ function cancel() {
 
 function animate_to_full() {
     init();
-    // degrees+=addition;
+    degrees+=addition;
 }
