@@ -1,12 +1,12 @@
 # progressbar
 Dependency For QB-Core
 
+Redesign of project sloth Circle UI Design, can't remember who made the original design but if you see this please PR your name into the credits, Fixed eating and sitting down where progressbar usually would cancel your shit for no reason and then redid the pretty old asf lua part of the script
+
 Circular Progressbar with access to font awesome icons to change with.
 
 # Previews
-![image](https://user-images.githubusercontent.com/82112471/168499116-faaadbbb-b0a3-4708-9330-d96ccb9a885a.png)
-![image](https://i.imgur.com/HIz3l2i.jpeg)
-
+![image](https://cdn.discordapp.com/attachments/917713647193710602/1024931507200081961/IMG_4385.png)
 
 # Changes to do!
 
