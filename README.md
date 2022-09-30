@@ -6,7 +6,7 @@ Redesign of project sloth Circle UI Design, can't remember who made the original
 Circular Progressbar with access to font awesome icons to change with.
 
 # Previews
-![image](https://cdn.discordapp.com/attachments/917713647193710602/1024931507200081961/IMG_4385.png)
+![image](https://media.discordapp.net/attachments/1025302135044317264/1025303132181364736/68747470733a2f2f63646e2e646973636f72646170702e636f6d2f6174746163686d656e74732f3931373731333634373139333731303630322f313032343933313530373230303038313936312f494d475f343338352e706e67.jpg)
 
 # Changes to do!
 
